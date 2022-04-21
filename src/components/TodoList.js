@@ -6,6 +6,7 @@ function TodoList() {
   return (
     <div>
       <h1>What are we doing today?</h1>
+      <TodoForm />
     </div>
   )
 }
