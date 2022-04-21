@@ -4,14 +4,15 @@ import TodoList from './TodoList';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-function Todo(props) {
-  const { todos, completeTodo, remove } = props;
+function Todo({ todos, completeTodo, remove }) {
+  // const { todos, completeTodo, remove } = props;
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
+
   return todos.map((todo, index) => {
-    <div
+    return (<div
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}>
       <div
@@ -27,8 +28,9 @@ function Todo(props) {
          onClick={() => setEdit({id: todo.id, value: todo.text})}
          className="edit-icon" />
       </div>
-    </div>
-  })
+    </div>)
+  });
+
 }
 
 export default Todo
